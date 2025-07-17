@@ -1,0 +1,2 @@
+# hispark_pos_customer_required
+hispark_pos_customer_required
