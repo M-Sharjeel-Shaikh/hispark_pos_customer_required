@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates xml:space="preserve">
+    <t t-name="InheritActionpadWidget" t-inherit="point_of_sale.ActionpadWidget" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('set-partner')]" position="replace">
+            <button t-attf-class='button set_customer_custom #{ ( props.partner and props.partner.name.length > 10) ? "decentered" : "" }'
+                    t-on-click="() => this.trigger('click-partner')">
+                <i class='fa fa-user' role="img" aria-label="Customer" title="Customer"/>
+                <t t-if="props.partner">
+                    <t t-esc="props.partner.name"/>
+                </t>
+                <t t-if="!props.partner">
+                    Customer
+                </t>
+            </button>
+        </xpath>
+    </t>
+</templates>
